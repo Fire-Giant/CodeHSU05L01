@@ -11,7 +11,14 @@ public Rectangle(){
     width = 1.0;
     height = 1.0;
 }
-public Rectangle(double w, double h){
+
+    /**
+     * Creates a Rectangle object with width and height
+     *
+     * @param w width of the rectangle
+     * @param h height of the rectangle
+     */
+    public Rectangle(double w, double h){
     width = w;
     height = h;
 }
@@ -25,6 +32,21 @@ public Rectangle(double width){
 
     //accessors
 
+    /**
+     * @return the width of the rectangle
+     */
+    public double getWidth() {
+        return width;
+    }
+
+    /**
+     * Allows the user to change the width of the rectangle.
+     * @param newWidth desired width
+     */
+
+    public void setWidth(double newWidth){
+        width = newWidth;
+    }
 
 
     //mutators
@@ -36,5 +58,14 @@ public Rectangle(double width){
 
 
     //toString method
+/**
+ * Prints the height and width of rectangle to 2 decimal places
+ */
 
+
+ public String toString(){
+        DecimalFormat df = new DecimalFormat("#.##"); //displays a number with 2 decimal places
+     return "The height of the rectangle is " + df.format(height) +
+             " and the width is " + df.format(width) + ".";
+    }
 }
