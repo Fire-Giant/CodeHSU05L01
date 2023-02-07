@@ -1,3 +1,12 @@
+/**
+ * @file Rectangle.java
+ * @date 2/2/2023
+ * @author Mr. Smith
+ *
+ * @description Creates a rectangle with a width and height or a square with a side length
+ *
+ */
+
 import java.text.DecimalFormat;
 public class Rectangle { //make public for CS A
 
@@ -19,8 +28,15 @@ public Rectangle(){
      * @param h height of the rectangle
      */
     public Rectangle(double w, double h){
-    width = w;
-    height = h;
+    width = 1.0;
+    height = 1.0;
+    if(w > 0){
+        width = w;
+    }
+    if(h > 0){
+        height = h;
+    }
+
 }
 public Rectangle(double width){
     this.width = width;
@@ -43,20 +59,47 @@ public Rectangle(double width){
      * Allows the user to change the width of the rectangle.
      * @param newWidth desired width
      */
-
-    public void setWidth(double newWidth){
+    //mutators
+    public void setWidth(double newWidth)
+    {
         width = newWidth;
     }
 
+    /**
+     * Modifies the height of the the rectangle
+     * @param height
+     */
+    public void setHeight(double height){
+        this.height = height;
+    }
 
-    //mutators
+
+
 
 
     //other methods
+/**
+ * @description Calculates area of rectangle
+ * @return area of rectangle
+ */
+public double calculateArea() {
+    return height * width;
+}
+/**
+ *@description Calculates perimeter of rectangle
+ * @return perimeter of rectangle
+ */
+public double  calculatePerimeter() {
+    perimeter = 2 * (width + height);
+    return perimeter;
+}
 
 
 
-
+public void resetRectangle(){
+    width = 1;
+    height = 1;
+}
     //toString method
 /**
  * Prints the height and width of rectangle to 2 decimal places
